@@ -71,7 +71,7 @@ class HomeController extends Controller
     }
 
     public function posts(Request $req, $id) {
-        $req->posts->store('images/posts', 'public') ;
+        $req->posts->store('images/posts', 'public');
         $post = new Post();
         
         $post->image = $req->posts->hashName();
