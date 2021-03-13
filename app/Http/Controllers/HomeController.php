@@ -53,7 +53,7 @@ class HomeController extends Controller
     public function changepassword(Request $req ,$id) {
         $user = User::find( $id );
     
-        if ( Hash::check( $req->oldpassword, $user->password )){
+        if ( Hash::check( $req->oldpassword, $user->password )){    
             if ($_POST['newpassword'] === $_POST['renewpassword']) {
                 $user->password = Hash::make( $req->newpassword);
                 $user->save();
